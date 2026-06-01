@@ -1,0 +1,2156 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Send photos of your junk and get a clear fixed-price rubbish removal quote before pickup. Fast, transparent junk removal in Brisbane and Melbourne."
+    />
+    <title>No More Junk | Photo Quotes For Rubbish Removal</title>
+    <style>
+      :root {
+        --black: #050505;
+        --panel: #111111;
+        --white: #ffffff;
+        --green: #00ed00;
+        --soft: #f3f3f3;
+        --muted: #b8b8b8;
+        --line: #dddddd;
+        --danger: #c40000;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--white);
+        color: var(--black);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        text-rendering: geometricPrecision;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main#top {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main#top > .hero {
+        order: 1;
+      }
+
+      main#top > #services {
+        order: 2;
+      }
+
+      main#top > #quote {
+        order: 3;
+      }
+
+      main#top > #how-it-works {
+        order: 4;
+      }
+
+      main#top > section:not(.hero):not(#services):not(#quote):not(#how-it-works) {
+        order: 5;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+        border-radius: 0;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid var(--green);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        width: min(100% - 40px, 1180px);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 50;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(5, 5, 5, 0.95);
+        color: var(--white);
+        backdrop-filter: blur(18px);
+      }
+
+      .header-inner {
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        background: var(--green);
+        color: var(--black);
+        font-size: 18px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .nav a:hover {
+        color: var(--white);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 0;
+        background: var(--green);
+        color: var(--black);
+        padding: 16px 22px;
+        font-weight: 950;
+        line-height: 1;
+        transition: 160ms ease;
+      }
+
+      .button:hover {
+        background: var(--white);
+      }
+
+      .button.dark {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .button.dark:hover {
+        background: var(--white);
+        color: var(--black);
+      }
+
+      .button.outline {
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: transparent;
+        color: var(--white);
+      }
+
+      .button.outline:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        background: transparent;
+        color: var(--white);
+        font-weight: 950;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: var(--black);
+        color: var(--white);
+        padding: 126px 0 96px;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 1px;
+        background: var(--green);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        align-items: center;
+        gap: 64px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0 0 22px;
+        border: 1px solid rgba(0, 237, 0, 0.45);
+        padding: 9px 12px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .kicker.dark {
+        border: 0;
+        padding: 0;
+        color: #646464;
+      }
+
+      .kicker.on-black {
+        border: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 28px;
+        font-size: clamp(52px, 8vw, 86px);
+        line-height: 0.93;
+        letter-spacing: 0;
+        font-weight: 950;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        font-size: clamp(38px, 5vw, 58px);
+        line-height: 1;
+        letter-spacing: 0;
+        font-weight: 950;
+      }
+
+      h3 {
+        margin-bottom: 0;
+        font-size: 22px;
+        line-height: 1.08;
+        font-weight: 950;
+      }
+
+      .lead {
+        max-width: 650px;
+        margin-bottom: 34px;
+        color: #e8e8e8;
+        font-size: 20px;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .trust-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 850;
+      }
+
+      .tick {
+        color: var(--green);
+        font-weight: 950;
+      }
+
+      .quote-card {
+        position: relative;
+        max-width: 560px;
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--white);
+        padding: 22px;
+        color: var(--black);
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.3);
+      }
+
+      .quote-badge {
+        position: absolute;
+        right: -14px;
+        top: -14px;
+        background: var(--green);
+        padding: 13px 18px;
+        font-size: 13px;
+        font-weight: 950;
+        box-shadow: 0 16px 45px rgba(0, 237, 0, 0.18);
+      }
+
+      .quote-shell {
+        border: 1px solid var(--line);
+        background: var(--soft);
+        padding: 22px;
+      }
+
+      .quote-head,
+      .split {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .eyebrow {
+        margin-bottom: 8px;
+        color: #666;
+        font-size: 12px;
+        font-weight: 950;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .icon-box {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        background: var(--black);
+        color: var(--green);
+        font-weight: 950;
+      }
+
+      .mock-uploads {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin: 22px 0;
+      }
+
+      .mock-upload {
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border: 1px dashed #cfcfcf;
+        background: var(--white);
+        color: #777;
+        font-weight: 950;
+      }
+
+      .mini-steps {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini-step {
+        display: flex;
+        gap: 14px;
+        background: var(--white);
+        padding: 16px;
+      }
+
+      .mini-step strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .promise-panel {
+        max-width: 520px;
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: var(--panel);
+        color: var(--white);
+        padding: 26px;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.3);
+      }
+
+      .promise-panel h2 {
+        font-size: clamp(30px, 4vw, 44px);
+      }
+
+      .promise-panel .section-copy {
+        color: var(--muted);
+      }
+
+      .promise-list {
+        display: grid;
+        gap: 1px;
+        margin-top: 24px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .promise-list div {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        align-items: center;
+        background: var(--black);
+        padding: 18px;
+      }
+
+      .promise-list b {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        background: var(--green);
+        color: var(--black);
+      }
+
+      .promise-list strong {
+        display: block;
+        font-weight: 950;
+      }
+
+      .promise-list span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .mini-step span:last-child {
+        display: block;
+        margin-top: 4px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .step-number {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        background: var(--green);
+        font-weight: 950;
+      }
+
+      .price-status {
+        margin-top: 18px;
+        background: var(--black);
+        color: var(--white);
+        padding: 22px;
+      }
+
+      .price-status p:last-child {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      section {
+        scroll-margin-top: 90px;
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section.soft {
+        background: var(--soft);
+      }
+
+      .section.black {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .section-copy {
+        max-width: 760px;
+        margin-top: 22px;
+        color: #626262;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .black .section-copy {
+        color: #d8d8d8;
+      }
+
+      .grid-3,
+      .grid-4,
+      .grid-2 {
+        display: grid;
+        gap: 16px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mt-lg {
+        margin-top: 42px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: var(--white);
+        padding: 28px;
+      }
+
+      .card.soft {
+        background: var(--soft);
+      }
+
+      .card.black-card {
+        border-color: rgba(255, 255, 255, 0.12);
+        background: var(--panel);
+        color: var(--white);
+      }
+
+      .card p {
+        margin: 14px 0 0;
+        color: #626262;
+        line-height: 1.55;
+      }
+
+      .black-card p {
+        color: var(--muted);
+      }
+
+      .contrast-strip {
+        margin-top: 20px;
+        background: var(--black);
+        color: var(--white);
+        padding: 34px;
+        font-size: clamp(26px, 3vw, 36px);
+        font-weight: 950;
+        line-height: 1.08;
+      }
+
+      .step-card {
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .step-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #8a8a8a;
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      .helper-note {
+        margin-top: 20px;
+        border-left: 4px solid var(--green);
+        background: var(--white);
+        padding: 18px;
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.55;
+      }
+
+      .method-grid {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .method-panel {
+        border: 1px solid var(--line);
+        background: var(--white);
+        padding: 28px;
+      }
+
+      .method-panel.black-panel {
+        border-color: var(--green);
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .method-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .method-row {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+        align-items: start;
+        padding: 18px;
+        background: var(--soft);
+      }
+
+      .black-panel .method-row {
+        background: var(--panel);
+      }
+
+      .method-row b {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        background: var(--black);
+        color: var(--white);
+        font-weight: 950;
+      }
+
+      .black-panel .method-row b {
+        background: var(--green);
+        color: var(--black);
+      }
+
+      .method-row strong {
+        display: block;
+        font-size: 18px;
+        font-weight: 950;
+      }
+
+      .method-row span {
+        display: block;
+        margin-top: 5px;
+        color: #626262;
+        line-height: 1.5;
+      }
+
+      .black-panel .method-row span {
+        color: var(--muted);
+      }
+
+      .pricing-factors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .pricing-factors span {
+        border: 1px solid rgba(0, 237, 0, 0.42);
+        padding: 9px 11px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .match-offer {
+        margin-top: 28px;
+        border: 1px solid rgba(0, 237, 0, 0.55);
+        background: var(--panel);
+        padding: 22px;
+      }
+
+      .match-offer strong {
+        display: block;
+        color: var(--green);
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.05;
+        font-weight: 950;
+      }
+
+      .match-offer span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .quote-section-grid {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 54px;
+        align-items: start;
+      }
+
+      .quote-form {
+        background: var(--white);
+        color: var(--black);
+        padding: 24px;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      label,
+      .field-label {
+        font-size: 14px;
+        font-weight: 950;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        border: 1px solid #cfcfcf;
+        background: var(--white);
+        color: var(--black);
+        padding: 14px 15px;
+        outline: 0;
+      }
+
+      textarea {
+        min-height: 132px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--black);
+        box-shadow: 0 0 0 4px rgba(0, 237, 0, 0.28);
+      }
+
+      .drop-zone {
+        min-height: 178px;
+        display: grid;
+        place-items: center;
+        border: 2px dashed #cfcfcf;
+        background: var(--soft);
+        padding: 28px;
+        text-align: center;
+        cursor: pointer;
+        transition: 160ms ease;
+      }
+
+      .drop-zone.dragging,
+      .drop-zone:hover {
+        border-color: var(--black);
+        background: rgba(0, 237, 0, 0.1);
+      }
+
+      .drop-zone input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      .drop-zone strong {
+        display: block;
+        margin-top: 16px;
+        font-size: 19px;
+        font-weight: 950;
+      }
+
+      .drop-zone span {
+        display: block;
+        max-width: 480px;
+        margin: 10px auto 0;
+        color: #606060;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .thumb {
+        position: relative;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: #e8e8e8;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .thumb button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background: var(--black);
+        color: var(--white);
+        font-weight: 950;
+      }
+
+      .error {
+        margin: 7px 0 0;
+        color: var(--danger);
+        font-size: 13px;
+        font-weight: 850;
+      }
+
+      .meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 8px;
+        color: #666;
+        font-size: 13px;
+      }
+
+      .check-row {
+        display: flex;
+        gap: 12px;
+        border: 1px solid var(--line);
+        background: var(--soft);
+        padding: 16px;
+        font-weight: 850;
+        line-height: 1.45;
+      }
+
+      .check-row input {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        accent-color: var(--green);
+      }
+
+      .success {
+        min-height: 520px;
+        display: none;
+        place-items: center;
+        background: var(--soft);
+        padding: 42px;
+        text-align: center;
+      }
+
+      .success.visible {
+        display: grid;
+      }
+
+      .success-mark {
+        width: 68px;
+        height: 68px;
+        display: grid;
+        place-items: center;
+        margin: 0 auto 22px;
+        background: var(--green);
+        font-size: 34px;
+        font-weight: 950;
+      }
+
+      .offer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-top: 30px;
+        background: var(--black);
+        color: var(--white);
+        padding: 30px;
+      }
+
+      .offer p {
+        margin: 0;
+        font-size: clamp(24px, 3vw, 32px);
+        line-height: 1.1;
+        font-weight: 950;
+      }
+
+      .service-card {
+        min-height: 118px;
+        display: flex;
+        align-items: end;
+        border: 1px solid var(--line);
+        background: var(--white);
+        padding: 22px;
+        font-size: 19px;
+        font-weight: 950;
+      }
+
+      .volume-guide {
+        overflow: hidden;
+        border: 2px solid var(--green);
+        background: var(--black);
+        color: var(--white);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.16);
+      }
+
+      .volume-guide-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: end;
+        padding: 28px;
+      }
+
+      .volume-guide-head h3 {
+        max-width: 720px;
+        font-size: clamp(36px, 5vw, 66px);
+        line-height: 0.93;
+        text-transform: uppercase;
+      }
+
+      .volume-guide-head h3 span {
+        color: var(--green);
+      }
+
+      .volume-pill {
+        width: fit-content;
+        margin-top: 18px;
+        background: var(--green);
+        color: var(--black);
+        padding: 10px 14px;
+        font-size: clamp(17px, 2vw, 23px);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .volume-benefits {
+        display: grid;
+        gap: 14px;
+        min-width: 260px;
+      }
+
+      .volume-benefit {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .volume-benefit .icon-box {
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--green);
+        background: transparent;
+      }
+
+      .volume-benefit strong {
+        display: block;
+        color: var(--green);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .volume-benefit span {
+        color: #e8e8e8;
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .volume-board {
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr) 300px;
+        gap: 0;
+        border-top: 2px solid var(--green);
+        background: var(--white);
+        color: var(--black);
+      }
+
+      .category-rail {
+        display: grid;
+        align-content: stretch;
+        background: var(--black);
+        color: var(--green);
+      }
+
+      .category-rail div {
+        display: grid;
+        place-items: center;
+        min-height: 92px;
+        border-bottom: 1px solid rgba(0, 237, 0, 0.35);
+        padding: 12px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .category-rail span {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 25px;
+      }
+
+      .volume-items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-left: 1px solid #dcdcdc;
+      }
+
+      .volume-item {
+        min-height: 118px;
+        display: grid;
+        align-content: center;
+        gap: 8px;
+        width: 100%;
+        border-right: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+        padding: 14px;
+        background: var(--white);
+        color: var(--black);
+        text-align: center;
+        cursor: pointer;
+        transition: 140ms ease;
+      }
+
+      .volume-item:hover,
+      .volume-item:focus-visible {
+        background: #eaffea;
+      }
+
+      .volume-item.selected {
+        box-shadow: inset 0 0 0 3px var(--green);
+      }
+
+      .item-art {
+        display: grid;
+        place-items: center;
+        width: 68px;
+        height: 42px;
+        margin: 0 auto;
+        background: linear-gradient(180deg, #ffffff, #e9e9e9);
+        border: 1px solid #cfcfcf;
+        color: #555;
+        font-size: 21px;
+        font-weight: 950;
+      }
+
+      .item-art svg {
+        width: 30px;
+        height: 30px;
+        stroke: #111;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      .volume-item strong {
+        font-size: 13px;
+        line-height: 1.15;
+      }
+
+      .volume-item em {
+        color: #009b00;
+        font-style: normal;
+        font-size: 15px;
+        font-weight: 950;
+      }
+
+      .selection-panel {
+        border-left: 2px solid var(--green);
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .selection-title {
+        background: var(--green);
+        color: var(--black);
+        padding: 12px 16px;
+        text-align: center;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .selected-list {
+        display: grid;
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .selected-list:empty::before {
+        content: "Click items to build an estimated load.";
+        display: block;
+        background: var(--white);
+        color: #666;
+        padding: 18px 14px;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .selected-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        background: var(--white);
+        color: var(--black);
+        padding: 12px 14px;
+        font-size: 13px;
+      }
+
+      .selected-row strong,
+      .selected-row span {
+        display: block;
+      }
+
+      .selected-row span {
+        margin-top: 3px;
+        color: #666;
+      }
+
+      .quantity {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #d9d9d9;
+        background: var(--soft);
+        font-weight: 950;
+      }
+
+      .quantity button {
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background: var(--white);
+        color: var(--black);
+        font-weight: 950;
+      }
+
+      .quantity span {
+        min-width: 18px;
+        margin: 0;
+        text-align: center;
+        color: var(--black);
+      }
+
+      .selected-remove {
+        border: 0;
+        background: transparent;
+        color: #777;
+        font-size: 18px;
+        font-weight: 950;
+      }
+
+      .extra-volume {
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .extra-volume label {
+        color: var(--green);
+        text-transform: uppercase;
+      }
+
+      .extra-volume input {
+        border-color: rgba(0, 237, 0, 0.5);
+        background: var(--panel);
+        color: var(--white);
+      }
+
+      .extra-volume small {
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .volume-total {
+        padding: 22px 16px;
+      }
+
+      .volume-total p {
+        margin: 0;
+        color: var(--green);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .volume-total strong {
+        display: block;
+        margin-top: 4px;
+        color: var(--green);
+        font-size: clamp(54px, 7vw, 74px);
+        line-height: 0.9;
+      }
+
+      .volume-scale {
+        display: grid;
+        gap: 8px;
+        margin-top: 18px;
+        border-top: 1px solid rgba(0, 237, 0, 0.45);
+        padding-top: 16px;
+        font-size: 13px;
+      }
+
+      .volume-scale div {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .volume-scale .active {
+        background: var(--green);
+        color: var(--black);
+        margin-inline: -6px;
+        padding: 7px 6px;
+        font-weight: 950;
+      }
+
+      .volume-guide-foot {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 22px;
+        align-items: center;
+        border-top: 2px solid var(--green);
+        padding: 22px 28px;
+      }
+
+      .volume-note {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        align-items: center;
+        color: #e7e7e7;
+        line-height: 1.45;
+      }
+
+      .volume-note strong {
+        display: block;
+        color: var(--green);
+        text-transform: uppercase;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .why-card {
+        min-height: 170px;
+        background: var(--panel);
+        padding: 28px;
+      }
+
+      .why-icon {
+        margin-bottom: 32px;
+        color: var(--green);
+        font-size: 28px;
+        font-weight: 950;
+      }
+
+      .area-card {
+        border: 1px solid var(--line);
+        background: var(--soft);
+        padding: 30px;
+      }
+
+      .area-card h3 {
+        margin-top: 18px;
+        font-size: 34px;
+      }
+
+      .faq-list {
+        margin-top: 42px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .faq-item + .faq-item {
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        border: 0;
+        background: var(--white);
+        padding: 24px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: 950;
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 0 24px 24px;
+        color: #626262;
+        line-height: 1.65;
+      }
+
+      .faq-item.open .faq-answer {
+        display: block;
+      }
+
+      .faq-item.open .chevron {
+        transform: rotate(180deg);
+      }
+
+      .chevron {
+        transition: 160ms ease;
+      }
+
+      .final-cta {
+        background: var(--green);
+        color: var(--black);
+        padding: 72px 0;
+      }
+
+      .final-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .final-inner p {
+        margin: 12px 0 0;
+        font-size: 21px;
+        font-weight: 850;
+      }
+
+      .footer {
+        background: var(--black);
+        color: var(--white);
+        padding: 52px 0 106px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 0.75fr;
+        gap: 36px;
+      }
+
+      .footer p,
+      .footer a {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .footer-brand {
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+      }
+
+      .footer-links {
+        display: grid;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .footer a:hover {
+        color: var(--green);
+      }
+
+      .mobile-sticky {
+        display: none;
+      }
+
+      @media (max-width: 980px) {
+        .nav,
+        .desktop-cta {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .mobile-menu.open {
+          position: fixed;
+          inset: 72px 0 auto;
+          display: grid;
+          gap: 4px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--panel);
+          padding: 18px 20px 22px;
+        }
+
+        .mobile-menu a,
+        .mobile-menu button {
+          padding: 14px 10px;
+          text-align: left;
+          color: var(--white);
+          font-weight: 900;
+        }
+
+        .mobile-menu button {
+          margin-top: 8px;
+          border: 0;
+          background: var(--green);
+          color: var(--black);
+          padding: 16px;
+        }
+
+        .hero-grid,
+        .quote-section-grid,
+        .method-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .quote-card,
+        .promise-panel {
+          margin-left: 0;
+        }
+
+        .grid-3,
+        .grid-4,
+        .why-grid,
+        .volume-board,
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .volume-guide-head,
+        .volume-guide-foot {
+          grid-template-columns: 1fr;
+        }
+
+        .category-rail {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .category-rail div {
+          min-height: 78px;
+        }
+
+        .selection-panel {
+          grid-column: 1 / -1;
+          border-left: 0;
+          border-top: 2px solid var(--green);
+        }
+      }
+
+      @media (max-width: 680px) {
+        .wrap {
+          width: min(100% - 32px, 1180px);
+        }
+
+        .hero {
+          padding: 112px 0 70px;
+        }
+
+        h1 {
+          font-size: 52px;
+        }
+
+        h2 {
+          font-size: 39px;
+        }
+
+        .lead {
+          font-size: 18px;
+        }
+
+        .button,
+        .hero-actions,
+        .hero-actions .button {
+          width: 100%;
+        }
+
+        .quote-badge {
+          display: none;
+        }
+
+        .section {
+          padding: 74px 0;
+        }
+
+        .grid-2,
+        .grid-3,
+        .grid-4,
+        .why-grid,
+        .volume-board,
+        .form-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .volume-guide-head,
+        .volume-guide-foot {
+          padding: 20px;
+        }
+
+        .volume-benefits {
+          min-width: 0;
+        }
+
+        .category-rail {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .volume-items {
+          grid-template-columns: repeat(2, 1fr);
+          border-left: 0;
+        }
+
+        .volume-item {
+          min-height: 108px;
+        }
+
+        .thumbs {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .offer,
+        .final-inner {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .mobile-sticky {
+          position: fixed;
+          inset: auto 0 0;
+          z-index: 45;
+          display: block;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--black);
+          padding: 12px;
+          box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-sticky .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="logo" href="#top" aria-label="No More Junk home"><span class="logo-mark">NJ</span><span>NO MORE JUNK</span></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#services">What We Take</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <button class="button desktop-cta" data-scroll="#quote">Get My Quote <span aria-hidden="true">-></span></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      </div>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#services">What We Take</a>
+        <a href="#faq">FAQ</a>
+        <button data-scroll="#quote">Get My Quote</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="kicker">Photo quotes. Fixed price. No pressure.</p>
+            <h1>No more guessing. No more junk.</h1>
+            <p class="lead">Upload photos of what needs to go. We'll review the load and send you a clear fixed-price quote before anyone turns up.</p>
+            <div class="hero-actions">
+              <button class="button" data-scroll="#quote">Upload Photos For Quote <span aria-hidden="true">-></span></button>
+              <a class="button outline" href="sms:+61000000000">Text Photos Instead</a>
+            </div>
+            <p class="trust-line"><span class="tick">✓</span> Fast quotes. Clear pricing. No driveway surprises.</p>
+          </div>
+
+          <aside class="promise-panel" aria-label="No More Junk promise">
+            <p class="kicker on-black">The difference</p>
+            <h2>Price first. Pickup second.</h2>
+            <p class="section-copy">A proper quote should not start when the truck is already in your driveway.</p>
+            <div class="promise-list">
+              <div><b>1</b><span><strong>Photos show the job</strong><span>Items, access, stairs, lifts and anything awkward.</span></span></div>
+              <div><b>2</b><span><strong>We price the real load</strong><span>Volume, weight, labour and disposal are reviewed upfront.</span></span></div>
+              <div><b>3</b><span><strong>You get it in writing</strong><span>If the job changes, we confirm before proceeding.</span></span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section soft" id="how-it-works">
+        <div class="wrap">
+          <p class="kicker dark">How it works</p>
+          <h2>The quote should come before the truck.</h2>
+          <p class="section-copy">Most rubbish removal pages make you book first and negotiate later. No More Junk keeps the pressure out of it.</p>
+          <div class="method-grid">
+            <article class="method-panel">
+              <p class="eyebrow">The old way</p>
+              <h3>Book now. Find out later.</h3>
+              <div class="method-list">
+                <div class="method-row"><b>?</b><div><strong>Vague price ranges</strong><span>Not much help until someone sees the pile.</span></div></div>
+                <div class="method-row"><b>!</b><div><strong>Driveway pressure</strong><span>The team is there, the truck is there, now you have to decide.</span></div></div>
+                <div class="method-row"><b>$</b><div><strong>Surprise changes</strong><span>Access, weight and disposal costs can appear late.</span></div></div>
+              </div>
+            </article>
+            <article class="method-panel black-panel">
+              <p class="kicker on-black">Our way</p>
+              <h3>Send photos. Get a fixed quote. Then book.</h3>
+              <div class="method-list">
+                <div class="method-row"><b>1</b><div><strong>Send photos</strong><span>Wide shots, close-ups, access, stairs and heavy items.</span></div></div>
+                <div class="method-row"><b>2</b><div><strong>We review the load</strong><span>Pricing factors include volume, weight, labour, access and disposal or recycling requirements.</span></div></div>
+                <div class="method-row"><b>3</b><div><strong>Book pickup</strong><span>If you are happy with the written price, choose a time and we clear it.</span></div></div>
+              </div>
+              <div class="pricing-factors" aria-label="Pricing factors">
+                <span>Fixed quote from photos</span>
+                <span>No hidden call-out surprises</span>
+                <span>Confirmed before booking</span>
+                <span>Recycling considered where possible</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section black" id="quote">
+        <div class="wrap quote-section-grid">
+          <div>
+            <p class="kicker on-black">Get quoted</p>
+            <h2>Start your photo quote.</h2>
+            <p class="section-copy">Upload the photos and the job details. We will review the load and reply with a clear written price.</p>
+            <div class="mt-lg">
+              <p><span class="tick">✓</span> Upload up to 8 photos</p>
+              <p><span class="tick">✓</span> Add access and timing</p>
+              <p><span class="tick">✓</span> Price confirmed before booking</p>
+            </div>
+            <div class="match-offer">
+              <strong>Got a written quote? We’ll aim to beat it by 10%.</strong>
+              <span>Send the quote with your photos. Where possible, we’ll sharpen the price before you book.</span>
+            </div>
+          </div>
+
+          <form class="quote-form" id="quoteForm" novalidate>
+            <div id="formFields">
+              <div class="form-grid">
+                <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" /><p class="error" data-error="name"></p></div>
+                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" /><p class="error" data-error="phone"></p></div>
+                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" /><p class="error" data-error="email"></p></div>
+                <div class="field"><label for="location">Suburb/postcode</label><input id="location" name="location" autocomplete="postal-code" /><p class="error" data-error="location"></p></div>
+              </div>
+
+              <div class="field" style="margin-top: 18px">
+                <span class="field-label">Upload photos</span>
+                <label class="drop-zone" id="dropZone">
+                  <input id="photos" name="photos" type="file" accept="image/*" multiple />
+                  <span class="icon-box" style="margin: 0 auto">UP</span>
+                  <strong>Drag photos here or tap to upload</strong>
+                  <span>Wide shots, close-ups, access, stairs, lifts and heavy items. JPG, PNG or HEIC photos are fine.</span>
+                </label>
+                <p class="error" data-error="photos"></p>
+                <div class="thumbs" id="thumbs" aria-live="polite"></div>
+              </div>
+
+              <div class="field" style="margin-top: 18px">
+                <label for="details">What needs removing?</label>
+                <textarea id="details" name="details" maxlength="500" placeholder="Example: 2 couches, mattress, boxes, old shelving. Driveway access, no stairs."></textarea>
+                <div class="meta-row"><p class="error" data-error="details"></p><span><span id="charCount">0</span>/500</span></div>
+              </div>
+
+              <div class="form-grid" style="margin-top: 18px">
+                <div class="field">
+                  <label for="access">Access details</label>
+                  <select id="access" name="access">
+                    <option>Ground floor / easy access</option>
+                    <option>Stairs</option>
+                    <option>Lift access</option>
+                    <option>Tight access</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="timing">Preferred pickup timing</label>
+                  <select id="timing" name="timing">
+                    <option>Today</option>
+                    <option>Tomorrow</option>
+                    <option>This week</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-top: 18px">
+                <label class="check-row"><input id="confirm" name="confirm" type="checkbox" /> <span>I confirm the photos show everything I want removed.</span></label>
+                <p class="error" data-error="confirm"></p>
+              </div>
+
+              <button class="button" style="width: 100%; margin-top: 18px; padding: 20px" type="submit">Send My Photos For Quote <span aria-hidden="true">-></span></button>
+            </div>
+
+            <div class="success" id="successState">
+              <div>
+                <div class="success-mark">✓</div>
+                <h3>Photos received.</h3>
+                <p class="section-copy" style="margin: 12px auto 0; max-width: 430px">We'll review and send your quote shortly.</p>
+                <button class="button dark" id="resetForm" type="button" style="margin-top: 24px">Send another request</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section soft" id="services">
+        <div class="wrap">
+          <div class="split">
+            <div>
+              <p class="kicker dark">What we take</p>
+              <h2>How much space does your junk take up?</h2>
+              <p class="section-copy">We quote by the load, not by making up a number in your driveway. These are rough volume guides only. Send photos for the fixed price.</p>
+            </div>
+            <button class="button dark" data-scroll="#quote">Not sure? Send photos.</button>
+          </div>
+          <div class="volume-guide mt-lg" aria-label="Approximate junk volume guide">
+            <div class="volume-guide-head">
+              <div>
+                <h3>Common items and the space <span>your junk</span> takes up.</h3>
+                <div class="volume-pill">Click items to estimate your load.</div>
+              </div>
+              <div class="volume-benefits">
+                <div class="volume-benefit"><div class="icon-box">1</div><div><strong>Select items</strong><span>Add anything close to your load.</span></div></div>
+                <div class="volume-benefit"><div class="icon-box">2</div><div><strong>Add extras</strong><span>Type extra m³ if something is not listed.</span></div></div>
+                <div class="volume-benefit"><div class="icon-box">3</div><div><strong>Send photos</strong><span>We confirm the fixed price in writing.</span></div></div>
+              </div>
+            </div>
+
+            <div class="volume-board">
+              <div class="category-rail" aria-label="Item categories">
+                <div><span>SOFA</span>Furniture</div>
+                <div><span>WM</span>Appliances</div>
+                <div><span>BBQ</span>Outdoor</div>
+                <div><span>DESK</span>Office</div>
+                <div><span>BOX</span>Moving boxes</div>
+                <div><span>REN</span>Renovation waste</div>
+              </div>
+
+              <div class="volume-items" id="volumeItems"></div>
+
+              <aside class="selection-panel" aria-label="Estimated selected load">
+                <div class="selection-title">Your estimated load</div>
+                <div class="selected-list" id="selectedList"></div>
+                <div class="extra-volume">
+                  <label for="extraVolume">Extra m³ not listed</label>
+                  <input id="extraVolume" type="number" min="0" step="0.1" inputmode="decimal" placeholder="0.0" />
+                  <small>Use this for odd items, loose piles or anything not shown.</small>
+                </div>
+                <div class="volume-total">
+                  <p>Estimated total volume</p>
+                  <strong id="volumeTotal">0m³</strong>
+                  <div class="volume-scale" id="volumeScale">
+                    <div data-min="0" data-max="0.5"><b>0-0.5m³</b><span>Small load, a few items or bags</span></div>
+                    <div data-min="0.5" data-max="1"><b>0.5-1m³</b><span>About fridge sized</span></div>
+                    <div data-min="1" data-max="2"><b>1-2m³</b><span>Small apartment cleanout</span></div>
+                    <div data-min="2" data-max="3"><b>2-3m³</b><span>Most common load, roughly half a garage</span></div>
+                    <div data-min="3" data-max="6"><b>3-6m³</b><span>Larger cleanout or moving leftovers</span></div>
+                    <div data-min="6" data-max="999"><b>6m³+</b><span>Large garage, house or commercial load</span></div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            <div class="volume-guide-foot">
+              <div class="volume-note"><div class="icon-box">!</div><p><strong>Please note</strong> This is only a rough estimate. Final pricing depends on actual volume, access, item type, weight and disposal requirements.</p></div>
+              <div class="volume-note"><div class="icon-box">CAM</div><p><strong>Not sure?</strong> Send us photos. It is the easiest way to get an accurate quote.</p></div>
+              <button class="button" data-scroll="#quote">Get a Quote <span aria-hidden="true">-></span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap grid-2" style="align-items: center">
+          <div>
+            <p class="kicker dark">Service areas</p>
+            <h2>Starting where the junk piles up.</h2>
+            <p class="section-copy">More locations can be added without changing the page structure.</p>
+          </div>
+          <div class="grid-2">
+            <article class="area-card"><p class="eyebrow">Now quoting</p><h3>Brisbane</h3></article>
+            <article class="area-card"><p class="eyebrow">Now quoting</p><h3>Melbourne</h3></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft" id="faq">
+        <div class="wrap" style="max-width: 880px">
+          <p class="kicker dark">FAQ</p>
+          <h2>Straight answers.</h2>
+          <div class="faq-list">
+            <article class="faq-item open"><button class="faq-button" type="button">Can you quote from photos?<span class="chevron">v</span></button><div class="faq-answer">Yes. The clearer the photos, the more accurate the quote.</div></article>
+            <article class="faq-item"><button class="faq-button" type="button">Is the price guaranteed?<span class="chevron">v</span></button><div class="faq-answer">The quote is fixed based on the items shown in the photos. If extra items are added or access is different from what was shown, we'll confirm any change before proceeding.</div></article>
+            <article class="faq-item"><button class="faq-button" type="button">What photos should I send?<span class="chevron">v</span></button><div class="faq-answer">Wide shots, close-ups, heavy items, access points, stairs, lifts and anything awkward.</div></article>
+            <article class="faq-item"><button class="faq-button" type="button">Do I need to be home?<span class="chevron">v</span></button><div class="faq-answer">Not always. If access is clear and payment is arranged, pickup may be possible without you there.</div></article>
+            <article class="faq-item"><button class="faq-button" type="button">Do you recycle?<span class="chevron">v</span></button><div class="faq-answer">Where possible, items are separated for recycling, donation or responsible disposal.</div></article>
+            <article class="faq-item"><button class="faq-button" type="button">Can you do same-day pickup?<span class="chevron">v</span></button><div class="faq-answer">Depending on availability and location, same-day or next-day pickup may be available.</div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="wrap final-inner">
+          <div>
+            <h2>Ready to get rid of it?</h2>
+            <p>Send the photos. Get the price. Book the pickup.</p>
+          </div>
+          <button class="button dark" data-scroll="#quote">Upload Photos Now <span aria-hidden="true">-></span></button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="footer-brand">NO MORE JUNK</div>
+          <p>Photo-first rubbish removal quotes for Brisbane and Melbourne. Clear price before pickup.</p>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+61000000000">Phone placeholder</a>
+          <a href="mailto:quotes@nomorejunk.example">Email placeholder</a>
+        </div>
+        <div class="footer-links">
+          <p>Service areas: Brisbane, Melbourne</p>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-sticky">
+      <button class="button" data-scroll="#quote">Get Photo Quote <span aria-hidden="true">-></span></button>
+    </div>
+
+    <script>
+      const menuToggle = document.querySelector("#menuToggle");
+      const mobileMenu = document.querySelector("#mobileMenu");
+      const quoteForm = document.querySelector("#quoteForm");
+      const formFields = document.querySelector("#formFields");
+      const successState = document.querySelector("#successState");
+      const resetForm = document.querySelector("#resetForm");
+      const dropZone = document.querySelector("#dropZone");
+      const photoInput = document.querySelector("#photos");
+      const thumbs = document.querySelector("#thumbs");
+      const details = document.querySelector("#details");
+      const charCount = document.querySelector("#charCount");
+      const volumeItemsEl = document.querySelector("#volumeItems");
+      const selectedList = document.querySelector("#selectedList");
+      const volumeTotal = document.querySelector("#volumeTotal");
+      const volumeScale = document.querySelector("#volumeScale");
+      const extraVolume = document.querySelector("#extraVolume");
+      let photos = [];
+      const selectedItems = new Map();
+
+      const volumeItems = [
+        { name: "3 Seater Couch", volume: 1.5, icon: "sofa" },
+        { name: "Armchair", volume: 0.6, icon: "chair" },
+        { name: "TV Unit", volume: 0.5, icon: "cabinet" },
+        { name: "Single Bed + Mattress", volume: 1, icon: "bed" },
+        { name: "Fridge", volume: 1, icon: "fridge" },
+        { name: "Washing Machine", volume: 0.7, icon: "washer" },
+        { name: "Microwave", volume: 0.1, icon: "box" },
+        { name: "Oven", volume: 0.5, icon: "oven" },
+        { name: "Bicycle", volume: 0.3, icon: "bike" },
+        { name: "BBQ", volume: 0.5, icon: "bbq" },
+        { name: "Large Plant Pot", volume: 1.2, icon: "plant" },
+        { name: "Wheelbarrow", volume: 0.4, icon: "barrow" },
+        { name: "Small Desk", volume: 0.4, icon: "desk" },
+        { name: "Filing Cabinet", volume: 0.5, icon: "drawer" },
+        { name: "Printer", volume: 0.2, icon: "printer" },
+        { name: "Office Partition", volume: 0.5, icon: "partition" },
+        { name: "10 Medium Boxes", volume: 0.6, icon: "boxes" },
+        { name: "Rubbish Bags", volume: 0.3, icon: "bag" },
+        { name: "Flattened Cardboard", volume: 0.3, icon: "cardboard" },
+        { name: "2 Large Suitcases", volume: 0.4, icon: "suitcase" },
+        { name: "Timber Offcuts", volume: 0.5, icon: "timber" },
+        { name: "Plasterboard Stack", volume: 0.8, icon: "stack" },
+        { name: "Tile Pile", volume: 0.4, icon: "tiles" },
+        { name: "Bathroom Vanity", volume: 0.6, icon: "vanity" },
+      ];
+
+      function itemIcon(type) {
+        const icons = {
+          sofa: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 18h24a4 4 0 0 1 4 4v8H4v-8a4 4 0 0 1 4-4Z"/><path d="M9 18v-5h22v5M9 30v4M31 30v4"/></svg>',
+          chair: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 7h16l-2 17H12L13 7Z"/><path d="M12 24h18v6H10v-4a2 2 0 0 1 2-2ZM14 30l-2 5M28 30l2 5"/></svg>',
+          cabinet: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 13h26v14H7z"/><path d="M10 27v5M30 27v5M13 20h14"/></svg>',
+          bed: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 14h10v8H5zM15 18h20v12H5v-8"/><path d="M5 30v4M35 30v4"/></svg>',
+          fridge: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 4h16v32H12zM12 17h16M16 9v4M16 22v4"/></svg>',
+          washer: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 5h20v30H10z"/><circle cx="20" cy="23" r="7"/><path d="M14 10h4M23 10h3"/></svg>',
+          box: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12h24v18H8z"/><path d="M12 16h16"/></svg>',
+          oven: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 5h22v30H9zM13 16h14v13H13zM13 10h2M19 10h2M25 10h2"/></svg>',
+          bike: '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="11" cy="28" r="6"/><circle cx="30" cy="28" r="6"/><path d="M11 28l8-13 4 13H11l12-13h5"/></svg>',
+          bbq: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 14h20v9a10 10 0 0 1-20 0v-9ZM8 14h24M16 31l-3 5M24 31l3 5M29 20h5"/></svg>',
+          plant: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 23h12l-2 12h-8l-2-12Z"/><path d="M20 23c0-8 8-13 12-13-1 7-5 11-12 13ZM20 23C20 15 12 10 8 10c1 7 5 11 12 13Z"/></svg>',
+          barrow: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 13h20l-4 13H12L8 13ZM28 14h7"/><circle cx="25" cy="31" r="4"/><path d="M12 26 7 34M24 26l-4 8"/></svg>',
+          desk: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 14h26v7H7zM11 21v14M29 21v14"/></svg>',
+          drawer: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 6h16v28H12zM12 15h16M12 24h16M18 11h4M18 20h4M18 29h4"/></svg>',
+          printer: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 5h14v10H13zM9 15h22v13H9zM13 24h14v11H13z"/><path d="M28 20h1"/></svg>',
+          partition: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 9h12v22H8zM20 9h12v22H20zM12 31v4M28 31v4"/></svg>',
+          boxes: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 19h12v12H6zM22 19h12v12H22zM14 8h12v11H14z"/></svg>',
+          bag: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 13h16l4 22H8l4-22Z"/><path d="M15 13c0-5 10-5 10 0"/></svg>',
+          cardboard: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 25h28M8 20h24M11 15h18M14 10h12"/></svg>',
+          suitcase: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10 12h20v22H10zM16 12V8h8v4M14 34v2M26 34v2"/></svg>',
+          timber: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 29 30 9M10 34 34 14M5 21l11 13M24 8l11 13"/></svg>',
+          stack: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 25h26v6H7zM9 19h22v6H9zM11 13h18v6H11z"/></svg>',
+          tiles: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 12h10v8H8zM22 12h10v8H22zM8 24h10v8H8zM22 24h10v8H22z"/></svg>',
+          vanity: '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M9 17h22v17H9zM13 22h14M20 17v17M15 11h10v6H15z"/></svg>',
+        };
+        return icons[type] || icons.box;
+      }
+
+      function scrollToTarget(selector) {
+        document.querySelector(selector)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      }
+
+      function formatVolume(value) {
+        const rounded = Math.round(value * 10) / 10;
+        return `${Number.isInteger(rounded) ? rounded.toFixed(0) : rounded.toFixed(1)}m³`;
+      }
+
+      function renderVolumeItems() {
+        volumeItemsEl.innerHTML = volumeItems
+          .map(
+            (item) => `
+              <button class="volume-item" type="button" data-item="${item.name}" aria-label="Add ${item.name}, approximately ${formatVolume(item.volume)}">
+                <div class="item-art">${itemIcon(item.icon)}</div>
+                <strong>${item.name}</strong>
+                <em>≈ ${formatVolume(item.volume)}</em>
+              </button>
+            `,
+          )
+          .join("");
+      }
+
+      function activeLoadBand(total) {
+        return Array.from(volumeScale.children).find((band) => {
+          const min = Number(band.dataset.min);
+          const max = Number(band.dataset.max);
+          return total > min && total <= max;
+        });
+      }
+
+      function updateVolumeEstimate() {
+        const extra = Math.max(0, Number(extraVolume.value || 0));
+        let total = extra;
+        selectedItems.forEach((entry) => {
+          total += entry.volume * entry.qty;
+        });
+
+        selectedList.innerHTML = Array.from(selectedItems.values())
+          .map(
+            (entry) => `
+              <div class="selected-row">
+                <div>
+                  <strong>${entry.name}</strong>
+                  <span>${formatVolume(entry.volume)} each</span>
+                </div>
+                <div class="quantity" aria-label="${entry.name} quantity">
+                  <button type="button" data-action="decrease" data-item="${entry.name}" aria-label="Remove one ${entry.name}">-</button>
+                  <span>${entry.qty}</span>
+                  <button type="button" data-action="increase" data-item="${entry.name}" aria-label="Add one ${entry.name}">+</button>
+                  <button class="selected-remove" type="button" data-action="remove" data-item="${entry.name}" aria-label="Remove ${entry.name}">×</button>
+                </div>
+              </div>
+            `,
+          )
+          .join("");
+
+        volumeTotal.textContent = formatVolume(total);
+        document.querySelectorAll(".volume-item").forEach((button) => {
+          button.classList.toggle("selected", selectedItems.has(button.dataset.item));
+        });
+        volumeScale.querySelectorAll("div").forEach((band) => band.classList.remove("active"));
+        const active = total > 0 ? activeLoadBand(total) : null;
+        if (active) active.classList.add("active");
+      }
+
+      function addVolumeItem(name) {
+        const item = volumeItems.find((candidate) => candidate.name === name);
+        if (!item) return;
+        const current = selectedItems.get(name);
+        selectedItems.set(name, { ...item, qty: current ? current.qty + 1 : 1 });
+        updateVolumeEstimate();
+      }
+
+      renderVolumeItems();
+      updateVolumeEstimate();
+
+      volumeItemsEl.addEventListener("click", (event) => {
+        const button = event.target.closest(".volume-item");
+        if (button) addVolumeItem(button.dataset.item);
+      });
+
+      selectedList.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-action]");
+        if (!button) return;
+        const item = selectedItems.get(button.dataset.item);
+        if (!item) return;
+        if (button.dataset.action === "increase") item.qty += 1;
+        if (button.dataset.action === "decrease") item.qty -= 1;
+        if (button.dataset.action === "remove" || item.qty <= 0) selectedItems.delete(item.name);
+        updateVolumeEstimate();
+      });
+
+      extraVolume.addEventListener("input", updateVolumeEstimate);
+
+      document.querySelectorAll("[data-scroll]").forEach((button) => {
+        button.addEventListener("click", () => scrollToTarget(button.dataset.scroll));
+      });
+
+      menuToggle.addEventListener("click", () => {
+        const open = !mobileMenu.classList.contains("open");
+        mobileMenu.classList.toggle("open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        document.body.classList.toggle("menu-open", open);
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        });
+      });
+
+      function setError(name, message) {
+        const target = document.querySelector(`[data-error="${name}"]`);
+        if (target) target.textContent = message || "";
+      }
+
+      function addPhotos(fileList) {
+        const next = Array.from(fileList)
+          .filter((file) => file.type.startsWith("image/"))
+          .map((file) => ({ id: `${file.name}-${file.lastModified}-${Math.random()}`, file, url: URL.createObjectURL(file) }));
+        photos = photos.concat(next).slice(0, 8);
+        setError("photos", "");
+        renderThumbs();
+      }
+
+      function renderThumbs() {
+        thumbs.innerHTML = "";
+        photos.forEach((photo) => {
+          const item = document.createElement("div");
+          item.className = "thumb";
+          item.innerHTML = `<img src="${photo.url}" alt="${photo.file.name}"><button type="button" aria-label="Remove ${photo.file.name}">x</button>`;
+          item.querySelector("button").addEventListener("click", () => {
+            URL.revokeObjectURL(photo.url);
+            photos = photos.filter((current) => current.id !== photo.id);
+            renderThumbs();
+          });
+          thumbs.appendChild(item);
+        });
+      }
+
+      photoInput.addEventListener("change", (event) => addPhotos(event.target.files));
+
+      dropZone.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropZone.classList.add("dragging");
+      });
+
+      dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragging"));
+
+      dropZone.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dropZone.classList.remove("dragging");
+        addPhotos(event.dataTransfer.files);
+      });
+
+      details.addEventListener("input", () => {
+        charCount.textContent = details.value.length;
+        setError("details", "");
+      });
+
+      quoteForm.addEventListener("input", (event) => {
+        if (event.target.name) setError(event.target.name, "");
+      });
+
+      quoteForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(quoteForm);
+        let valid = true;
+        const checks = [
+          ["name", data.get("name").trim(), "Enter your name."],
+          ["phone", data.get("phone").trim(), "Enter your phone number."],
+          ["email", String(data.get("email")).includes("@"), "Enter a valid email."],
+          ["location", data.get("location").trim(), "Enter your suburb or postcode."],
+          ["details", data.get("details").trim(), "Tell us what needs removing."],
+          ["confirm", data.get("confirm") === "on", "Confirm the photos show the full job."],
+        ];
+        checks.forEach(([name, passed, message]) => {
+          setError(name, passed ? "" : message);
+          if (!passed) valid = false;
+        });
+        setError("photos", photos.length ? "" : "Upload at least one photo.");
+        if (!photos.length) valid = false;
+        if (!valid) return;
+
+        // TODO: Send email notification with quote request details.
+        // TODO: Create or update customer/job record in the CRM.
+        // TODO: Connect uploaded photos to SMS/photo quoting workflow.
+        // TODO: Store files securely before quote review.
+        // TODO: Trigger booking system once the fixed quote is accepted.
+        photos.forEach((photo) => URL.revokeObjectURL(photo.url));
+        photos = [];
+        renderThumbs();
+        quoteForm.reset();
+        charCount.textContent = "0";
+        formFields.style.display = "none";
+        successState.classList.add("visible");
+      });
+
+      resetForm.addEventListener("click", () => {
+        formFields.style.display = "block";
+        successState.classList.remove("visible");
+      });
+
+      document.querySelectorAll(".faq-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.closest(".faq-item").classList.toggle("open");
+        });
+      });
+    </script>
+  </body>
+</html>
